@@ -1,0 +1,54 @@
+#LogoShokWorks{
+    float: left;
+    margin-top: 35px;
+    margin-left: 35px;
+    position: relative;
+}
+
+.nav-link{
+    color : #555555;
+    font: Medium 17px/26px Poppins;
+    font-family: 'Calibri' ;
+    font-size: 16px;
+}
+
+.nav-link:hover, .nav-item:hover, .nav-link:active, .nav-item:active{
+    color : #185F7F;
+    font-weight: bold;
+}
+
+.nav-item > p{
+    padding-top: 0px;
+    margin-top: -20px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center; 
+    color: white;
+    font-size: 30px;
+}
+
+.nav-item:hover > p{
+    color : #185F7F;
+}
+
+.form-control{
+    font-size: 14px;
+}
+
+.btnGradient {
+    font-size: 14px;
+    flex: 1 1 auto;
+    margin-top: 0px;
+    margin-left: 15px;
+    padding: 10px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 5px;
+   }
+
+.btnContactUs {
+    background-image: linear-gradient(to right, #2a4249 0%, #236580 51%, #20789e 100%);
+  }

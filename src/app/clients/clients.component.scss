@@ -1,0 +1,42 @@
+.flex-container {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+}
+
+.flex-container > div {
+    color: white;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    margin-top:0px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    border-radius: 5px
+}
+
+.flex-container > div:hover, .flex-container > div:hover > div > p {
+    background-color: #2a4249;
+    color: white;
+    font-size: 18px;
+    fill: white
+}
+
+.flex-container > div > div > p{
+    color: #2a4249;
+    font-size: 14px
+}
+
+.titleForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Parents{
+   align-self: flex-end; 
+   display: flex; 
+   justify-content: center
+}

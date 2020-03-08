@@ -1,0 +1,33 @@
+.divCentral{
+    margin-top: 20px
+}
+
+h2{
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.btn{
+    border-color: #51879f;
+    color: #51879f;
+    margin-left: 5px;
+    margin-right: 5px; 
+    text-align: center;
+    font-size: 14px;
+    flex: 1 1 auto;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    font-size: 14px;
+    padding: 10px;
+    flex: 1 1 auto;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    background-image: linear-gradient(to right, #2a4249 0%, #236580 51%, #20789e 100%);
+    border-radius: 5px;
+}

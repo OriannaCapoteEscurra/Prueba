@@ -1,0 +1,34 @@
+<!--http://newsapi.org/v2/everything?q=bitcoin&apiKey=cc27180fe27143ffa0a2611a879dede6 -->
+<div class="row titleNews">
+    <h2>What is the <br> <b> Speciality of Us? </b></h2>
+</div>
+
+<mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'" [animation]="'slide'">
+        <mdb-carousel-item *ngFor="let item of slides; let i = index">
+          <div class="col-md-3 pb-2" [ngClass]="{'d-none d-md-block': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
+                <mdb-card class="testimonial-card" >
+                    <!--Bacground color-->
+                    <div class="card-up white lighten-1">
+                    </div>
+                
+                    <!--Avatar-->
+                    <div class="avatar mx-auto">
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="rounded-circle">
+                    </div>
+                
+                    <mdb-card-body>
+                        <!--Name-->
+                        <mdb-card-title>
+                            <h4>{{card.title}}</h4>
+                        </mdb-card-title>
+                        <hr>
+                        <!--Quotation-->
+                        <p>
+                            <mdb-icon fas icon="quote-left"></mdb-icon> 
+                            {{card.description}}
+                        </p>
+                        </mdb-card-body>
+                    </mdb-card>
+          </div>
+        </mdb-carousel-item>
+      </mdb-carousel>
