@@ -1,6 +1,7 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit, Injectable } from '@angular/core';
 import { BrowserModule }    from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-news',
@@ -8,62 +9,33 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./news.component.scss']
 })
 
+
 @NgModule({
+  declarations: [
+    NewsComponent
+  ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClient
+  ],
+  providers: [
   ]
 })
+
 export class NewsComponent implements OnInit {
 
-  constructor() { }
-  /*url = 'http://newsapi.org/v2/top-headlines?' +
-          'country=us&' +
-          'apiKey=cc27180fe27143ffa0a2611a879dede6';
-  req = new Request(url);
-  fetch(req)
-      .then(function(response) {
-          console.log(response.json());
-      })*/
+  private loading: boolean = false;
+  apiRoot: string = "http://newsapi.org/v2/top-headlines";
+  results: [];
+  cards = [];
 
-  cards = [
-    {
-      title: 'Card Title 1',
-      description: 'This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-      buttonText: 'Button',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    },
-    {
-      title: 'Card Title 2',
-      description: 'This card has supporting text below as a natural lead-in to additional content.',
-      buttonText: 'Button',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    },
-    {
-      title: 'Card Title 3',
-      description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action. This text is much longer so that you can see a significant difference between the text in  previous tabs.',
-      buttonText: 'Button',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    },
-    {
-      title: 'Card Title 4',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Button',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    },
-    {
-      title: 'Card Title 5',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Button',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    },
-    {
-      title: 'Card Title 6',
-      description: 'Some quick example text to build on the card title and make up the bulk of the card content',
-      buttonText: 'Button',
-      img: 'https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg'
-    }
-  ];
+  constructor(private http: HttpClient) { 
+    this.results = [];
+    this.loading = true;
+    this.News().then(_ => (this.loading = false));
+  }
+
   slides: any = [[]];
   chunk(arr: any, chunkSize:any) {
     let R = [];
@@ -72,8 +44,32 @@ export class NewsComponent implements OnInit {
     }
     return R;
   }
+
   ngOnInit() {
-    this.slides = this.chunk(this.cards, 5);
+    
+  }
+
+  News() {
+    let promise = new Promise((resolve, reject) => {
+      let apiURL = `${this.apiRoot}?country=us&apiKey=cc27180fe27143ffa0a2611a879dede6`;
+      this.http
+        .get(apiURL)
+        .toPromise()
+        .then(
+          res => {
+            // Success
+            console.log("esto si sirveeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!!!!!!!!!!!!!!!!", res.articles);
+            resolve();
+            this.cards = res.articles;
+            this.slides = this.chunk(this.cards, 4);
+          },
+          msg => {
+            // Error
+            reject(msg);
+          }
+        );
+    });
+    return promise;
   }
 
 }

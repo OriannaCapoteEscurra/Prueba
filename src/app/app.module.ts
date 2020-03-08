@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormComponent } from './form/form.component';
 import { ClientsComponent } from './clients/clients.component';
 import { NewsComponent } from './news/news.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NewsComponent } from './news/news.component';
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
