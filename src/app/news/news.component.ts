@@ -61,7 +61,7 @@ export class NewsComponent implements OnInit {
             console.log("esto si sirveeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!!!!!!!!!!!!!!!!", res.articles);
             resolve();
             this.cards = res.articles;
-            this.slides = this.chunk(this.cards, 4);
+            this.slides = this.chunk(this.cards, 5);
           },
           msg => {
             // Error

@@ -3,9 +3,11 @@
     <h2>What is the <br> <b> Speciality of Us? </b></h2>
 </div>
 
-<mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'" [animation]="'slide'">
+<div class="flex-center" style="padding-bottom: 50px ">
+    <div class="col-md-1"></div>
+    <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'" [animation]="'slide'"  style="align-self: center">
         <mdb-carousel-item *ngFor="let item of slides; let i = index">
-          <div class="col-md-3 pb-2" [ngClass]="{'d-none d-md-block': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
+          <div class="col-md-2 pb-2" [ngClass]="{'d-none d-md-block': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
                 <mdb-card class="testimonial-card" >
                     <!--Bacground color-->
                     <div class="card-up white lighten-1">
@@ -32,3 +34,4 @@
           </div>
         </mdb-carousel-item>
       </mdb-carousel>
+    </div>
