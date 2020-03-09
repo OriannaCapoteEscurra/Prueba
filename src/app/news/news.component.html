@@ -1,31 +1,28 @@
-<!--http://newsapi.org/v2/everything?q=bitcoin&apiKey=cc27180fe27143ffa0a2611a879dede6 -->
+
 <div class="row titleNews">
     <h2>What is the <br> <b> Speciality of Us? </b></h2>
 </div>
 
 <div class="flex-center" style="padding-bottom: 50px ">
-    <div class="col-md-1"></div>
+    <div class="col-md-2"></div>
+    <!-- Section News. Consumo del API de http://newsapi.org/v2/everything-->
     <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'" [animation]="'slide'"  style="align-self: center">
         <mdb-carousel-item *ngFor="let item of slides; let i = index">
           <div class="col-md-2 pb-2" [ngClass]="{'d-none d-md-block': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
-                <mdb-card class="testimonial-card" >
-                    <!--Bacground color-->
-                    <div class="card-up white lighten-1">
-                    </div>
-                
-                    <!--Avatar-->
+                <mdb-card class="testimonial-card my-1 h-100" >                                   
+                    <!--Image-->
                     <div class="avatar mx-auto">
-                        <img src={{card.urlToImage}} class="rounded-circle" width="100px" height="100px">
+                        <img src={{card.urlToImage}} class="rounded-circle" width="150px" height="150px">
                     </div>
                 
                     <mdb-card-body>
-                        <!--Name-->
+                        <!--title-->
                         <mdb-card-title>
-                            <h4>{{card.title}}</h4>
+                            <h6>{{card.title}}</h6>
                         </mdb-card-title>
                         <hr>
-                        <!--Quotation-->
-                        <p>
+                        <!--Description-->
+                        <p style="font-size: 14px; overflow: hidden; padding-bottom: 10px" >
                             <mdb-icon fas icon="quote-left"></mdb-icon> 
                             {{card.description}}
                         </p>

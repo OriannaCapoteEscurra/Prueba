@@ -17,43 +17,35 @@
                             <div class="col">
                                 <!-- First name -->
                                 <div class="md-form">
-                                    <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput>
-                                    <label for="materialRegisterFormFirstName">First name</label>
+                                    <input type="text" id="materialRegisterFormFirstName" style="font-size: 14px" class="form-control" placeholder="Robert Lee" mdbInput>
+                                    <label for="materialRegisterFormFirstName" style="font-size: 20px; color: black"> <b>First name</b> </label>
                                 </div>
                             </div>
                             <div class="col">
                                 <!-- Last name -->
                                 <div class="md-form">
-                                    <input type="email" id="materialRegisterFormLastName" class="form-control" mdbInput>
-                                    <label for="materialRegisterFormLastName">Last name</label>
+                                    <input type="email" id="materialRegisterFormLastName" style="font-size: 14px" class="form-control" placeholder="Anderson" mdbInput>
+                                    <label for="materialRegisterFormLastName" style="font-size: 20px; color: black">Last name</label>
                                 </div>
                             </div>
                         </div>
                 
                         <!-- E-mail -->
                         <div class="md-form mt-0">
-                            <input type="email" id="materialRegisterFormEmail" class="form-control" mdbInput>
-                            <label for="materialRegisterFormEmail">E-mail</label>
+                            <input type="email" id="materialRegisterFormEmail" class="form-control" style="font-size: 14px" placeholder="kevin.jones@mail.com" mdbInput>
+                            <label for="materialRegisterFormEmail" style="font-size: 20px; color: black">Your Email Adress</label>
                         </div>
                 
                         <!-- Password -->
                         <div class="md-form">
-                            <input type="password" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
-                                mdbInput>
-                            <label for="materialRegisterFormPassword">Password</label>
-                            <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                                At least 8 characters and 1 digit
-                            </small>
-                        </div>
+                            <label style="font-size: 20px; color: black">Which Related Problem Your Facing?</label>
+                            <mdb-select [options]="optionsSelect" placeholder="Choose your option"></mdb-select>                                                    
+                        </div> 
                 
                         <!-- Phone number -->
                         <div class="md-form">
-                            <input type="text" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock"
-                                mdbInput>
-                            <label for="materialRegisterFormPhone">Phone number</label>
-                            <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                                Optional - for two-step authentication
-                            </small>
+                                <textarea type="text" id="form7"  style="font-size: 14px" class="md-textarea form-control" placeholder="Here goes your message" mdbInput></textarea>
+                                <label for="form7" style="font-size: 20px; color: black">Type Your Message</label>
                         </div>
                 
                         <hr>
